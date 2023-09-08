@@ -1,0 +1,12 @@
+<div id="<%= dom_id item %>">
+  <p>
+    <strong>Name:</strong>
+    <%= item.name %>
+  </p>
+  <p>
+    <strong>Picture:</strong>
+    <% if item.picture.attached? %>
+      <%= image_tag(item.picture) %>
+    <% end %>
+  </p>
+</div>
