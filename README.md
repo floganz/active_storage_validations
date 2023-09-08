@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Processable image validation strange behaviour
 
-Things you may want to cover:
+Install steps
+1. Install Ruby.
+2. Install libvips: `brew install vips`.
+3. Run `bundle install`.
+4. Set up the development and test databases with `rails db:create db:schema:load db:seed db:test:prepare`.
 
-* Ruby version
+Steps to reproduce via the interface:
+1. Start a server.
+2. Visit http://localhost:3000/items/new.
+3. Add to file field "malformed.png" from "spec/fixtures/images" folder.
+4. Save.
 
-* System dependencies
+**Expected result**: Validation error is display that image is not processable. Validation error is display that image is not processable.
 
-* Configuration
+**Actual result**: model is saved without error, obviously that image couldn't be displayed.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Same behaviour we can see in tests where for same invalid image not error is added on the model.
+Just run `rspec`.

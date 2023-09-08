@@ -18,7 +18,7 @@ RSpec.describe Item, type: :model do
       end
 
       context "when picture is an image" do
-        let(:picture) { "valid.jpg" }
+        let(:picture) { "valid.png" }
 
         it "does not add an error" do
           expect(error).not_to be_present
